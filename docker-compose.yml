@@ -5,7 +5,9 @@ services:
     build:
       context: elasticsearch/
       args:
-        ELK_VERSION: $ELK_VERSION
+      # 서버의 도커 버전이 낮아 버전 정보 직접 입력
+      #ELK_VERSION: $ELK_VERSION
+      ELK_VERSION: 7.10.0
     volumes:
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
@@ -29,7 +31,7 @@ services:
     build:
       context: logstash/
       args:
-        ELK_VERSION: $ELK_VERSION
+        ELK_VERSION: 7.10.0
     volumes:
       - type: bind
         source: ./logstash/config/logstash.yml
@@ -56,7 +58,7 @@ services:
     build:
       context: kibana/
       args:
-        ELK_VERSION: $ELK_VERSION
+        ELK_VERSION: 7.10.0
     volumes:
       - type: bind
         source: ./kibana/config/kibana.yml
