@@ -1,0 +1,8 @@
+
+- pipeline.id: bm_service 
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/bm_service.conf"
+
+- pipeline.id: p1s_k8s
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/p1s_k8s.conf"

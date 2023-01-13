@@ -36,8 +36,8 @@ services:
         ELK_VERSION: 7.10.0
     volumes:
       - type: bind
-        source: ./logstash/config/logstash.yml
-        target: /usr/share/logstash/config/logstash.yml
+        source: ./logstash/config
+        target: /usr/share/logstash/config
         read_only: true
       - type: bind
         source: ./logstash/pipeline
@@ -46,6 +46,7 @@ services:
     ports:
       - "5044:5044"
       - "5000:5000/tcp"
+      - "5001:5001/tcp"
       - "5000:5000/udp"
       - "9600:9600"
     environment:
